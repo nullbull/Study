@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div {
+            display: inline-block;
+            padding: .3em .5em;
+            background-image: linear-gradient(#fbb2d0, #e779aa);
+            border: 1px solid rgba(0,0,0,.2);
+            border-radius: .3em;
+            box-shadow: 0 1px white inset;
+            text-align: center;
+            text-shadow: 0 1px 1px black;
+            color:white;
+            font-weight: bold;
+        }
+        .div:active{
+            box-shadow: .05em .1em .2em rgba(0,0,0,.6) inset;
+            border-color: rgba(0,0,0,.3);
+            background: #bbb;
+        }
+        .dchild {
+            display: inline-block;
+            padding: .3em .5em;
+            background-image: linear-gradient(#fbb2d0, #e779aa);
+            border: 1px solid rgba(0,0,0,.2);
+            border-radius: .3em;
+            box-shadow: 0 1px white inset;
+            text-align: center;
+            text-shadow: 0 1px 1px black;
+            color:white;
+            font-weight: bold;
+            visibility:hidden;
+        }
+        .dchild:active{
+            box-shadow: .05em .1em .2em rgba(0,0,0,.6) inset;
+            border-color: rgba(0,0,0,.3);
+            background: #bbb;
+        }
+    </style>
+</head>
+　　<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+
+<script>
+    $(document).click(function (e){
+        var v_id=e.target.id;
+        var zz = document.getElementsByClassName("div");
+        for(var i = 0; i < zz.length; i++) {
+            if(zz[i].id != v_id)
+                zz[i].style.opacity="0.7";
+            else
+                zz[i].style.opacity="1";
+        }
+        var hh = document.getElementsByClassName("dchild");
+    });
+    function f() {
+        var zz = $(".dchild");
+        for (var i = 0; i < zz.length; i++)
+            zz[i].style.visibility="visible";
+    }
+
+    function b() {
+        document.getElementById("d2").style.opacity="0.6";
+        document.getElementById("d3").style.opacity="0.6";
+        document.getElementById("d4").style.opacity="0.6";
+    }
+</script>
+
+<body>
+<div>
+    <tr>
+        <div class="div" id="b1" onclick="f()">Button</div>
+    </tr>
+    <tr>
+        <div class="div" id="b2" >Button</div>
+    </tr>
+    <tr>
+        <div class="div" id="b3">Button</div>
+    </tr>
+    <tr>
+        <div class="div" id="b4">Button</div>
+    </tr>
+</div>
+<div>
+    <div class="dchild" id="d1" onclick="b()">Child</div>
+    <div class="dchild" id="d2">Child</div>
+    <div class="dchild" id="d3">Child</div>
+    <div class="dchild" id="d4">Child</div>
+</div>
+
+
+
+
+</body>
+</html>
