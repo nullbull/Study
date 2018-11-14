@@ -1,4 +1,4 @@
-package netty;
+package netty.NIO;
 
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;

@@ -1,4 +1,4 @@
-package netty;
+package netty.NIO;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -25,7 +25,7 @@ public class Server {
             servSocketChannel = ServerSocketChannel.open();
             servSocketChannel.configureBlocking(false);
             //绑定端口
-            servSocketChannel.socket().bind(new InetSocketAddress(8383));
+            servSocketChannel.socket().bind(new InetSocketAddress(8088));
 
             selector = Selector.open();
             servSocketChannel.register(selector, SelectionKey.OP_ACCEPT);

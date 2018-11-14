@@ -1,4 +1,4 @@
-package netty;
+package netty.NIO;
 
 
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class Client implements Runnable{
             channel = SocketChannel.open();
             channel.configureBlocking(false);
             //请求连接
-            channel.connect(new InetSocketAddress("localhost", 8383));
+            channel.connect(new InetSocketAddress("localhost", 8088));
             selector = Selector.open();
             channel.register(selector, SelectionKey.OP_CONNECT);
             boolean isOver = false;

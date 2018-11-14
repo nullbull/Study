@@ -1,8 +1,9 @@
-package netty;
+package netty.NIO;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
@@ -21,22 +22,19 @@ public class ServerConnect {
         ServerSocketChannel ssc = (ServerSocketChannel)key.channel();
         SocketChannel sc = ssc.accept();
         sc.configureBlocking(false);
-        sc.register(key.selector(), SelectionKey.OP_READ, ByteBuffer.allocateDirect(BUF_SIZE));
+        sc.register(key.selector(), SelectionKey.OP_READ);
     }
     public static void handleRead(SelectionKey key) throws IOException {
         SocketChannel sc = (SocketChannel)key.channel();
-        ByteBuffer buf = (ByteBuffer) key.attachment();
-
-        while (sc.read(buf) > 0) {
+        ByteBuffer buf = ByteBuffer.allocate(1024);
+        if (sc.read(buf) > 0) {
             buf.flip();
-            while (buf.hasRemaining()) {
-                System.out.print((char)buf.get());
-            }
-            System.out.println();
-            buf.clear();
-            ByteBuffer temp = ByteBuffer.wrap("zwt ".getBytes());
-            temp.flip();
-            sc.write(temp);
+            CharBuffer cb = CharsetHelper.decode(buf);
+            System.out.println(cb.toString());
+            String answer = "I Love ZWT";
+            sc.write(ByteBuffer.wrap(answer.getBytes()));
+//            sc.write(CharsetHelper.encode(CharBuffer.wrap(answer)));
+
         }
 
     }
