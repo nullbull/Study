@@ -9,22 +9,44 @@ import java.util.Scanner;
  */
 public class ZWT {
 
+    /**
+     * DEFAULT 默认大小
+     * 2030×1080 刘海屏等大屏分辨率 DEFALUT × 1.09
+     * SW600PD 平板电脑分辨率支持 DEFALUT × 1.035
+     * 源文件目录的dimens文件名需为dimens.xml
+     * 如选择当前目录，请输入回车
+     */
     private static double DEFAULT_2030_1080 = 1.09;
     private static double DEFAULT_SW600 = 1.035;
 
     private static String DEFAULT_FILE_NAME = "dimens-generation.xml";
     private static List<Integer> TYPE_LIST = Arrays.asList(1, 2, 3);
-    public static void gen(int type, String SourceFileName, String path) {
 
+
+    /**
+     * 将没有/的文件添加/
+     * @param path
+     * @return
+     */
+    private static String completePath(String path) {
         if (!path.isEmpty() && path.charAt(path.length() - 1) != '/') {
             path += "/";
         }
+        return path;
+    }
 
-        if (!SourceFileName.isEmpty() && SourceFileName.charAt(SourceFileName.length() - 1) != '/') {
-            SourceFileName += "/";
-        }
-
-        //以此文件夹下的dimens.xml文件内容为初始值参照
+    /**
+     * 生存方法
+     * @param type 选择的类型
+     * @param SourceFileName 目标文件目录
+     * @param path 输入文件目录
+     */
+    public static void gen(int type, String SourceFileName, String path) {
+        SourceFileName = completePath(SourceFileName);
+        path = completePath(path);
+        /**
+         * 以此文件夹下的dimens.xml文件内容为初始值参照
+         */
         File file = new File(SourceFileName + "dimens.xml");
         BufferedReader reader = null;
         StringBuilder sw240 = new StringBuilder();
@@ -38,10 +60,10 @@ public class ZWT {
             }
             if (type == 3) {
                 sw480.append("\r\n ")
-                        .append("              <!--  2030*1080 -->              \r\n");
+                     .append("              <!--  2030*1080 -->              \r\n");
             } else {
                 sw480.append("\r\n ")
-                        .append("              <!--  SW600 -->              \r\n");
+                     .append("              <!--  SW600 -->              \r\n");
             }
 
             reader = new BufferedReader(new FileReader(file));
@@ -78,11 +100,19 @@ public class ZWT {
                 }
                 line++;
             }
+            /**
+             * 确定文件的目录
+             */
             String sw240file = path.isEmpty() ? SourceFileName + DEFAULT_FILE_NAME : path + DEFAULT_FILE_NAME;
             reader.close();
+            /**
+             * 输出生成的配置文件
+             */
             System.out.println(sw240);
             System.out.println(sw480);
-            //将新的内容，写入到指定的文件中去
+            /**
+             * 将新的内容，写入到指定的文件中去
+             */
             writeFile(sw240file, sw240.toString() + sw480.toString());
             System.out.println("完成");
             System.out.println("生成的文件路径为" + new File(sw240file).getAbsoluteFile());
@@ -99,6 +129,12 @@ public class ZWT {
         }
     }
 
+    /**
+     * 验证输入文件目录是否合法, 空白输入合法
+     * @param file
+     * @param type
+     * @return
+     */
     private static boolean validFile(String file, int type) {
 
         if (file.isEmpty()) {
@@ -113,6 +149,11 @@ public class ZWT {
         }
     }
 
+    /**
+     * 验证输入的type是否合法
+     * @param type
+     * @return
+     */
     private static boolean validType(String type) {
         if (type.isEmpty() || type.length() != 1) {
             return false;
@@ -122,12 +163,9 @@ public class ZWT {
         }
         return TYPE_LIST.contains(Integer.parseInt(type));
     }
-
-
     /**
      * 写入方法
      */
-
     public static void writeFile(String file, String text) {
         PrintWriter out = null;
         try {
@@ -141,14 +179,6 @@ public class ZWT {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        /**
-         * DEFAULT 默认大小
-         * 2030×1080 刘海屏等大屏分辨率 DEFALUT × 1.09
-         * SW600PD 平板电脑分辨率支持 DEFALUT × 1.035
-         * 源文件目录的dimens文件名需为dimens.xml
-         * 如选择当前目录，请输入回车
-         */
-
         System.out.println(
                 " * DEFAULT 默认大小\n" +
          " * 2030×1080 刘海屏等大屏分辨率 DEFALUT × 1.09 \n" +

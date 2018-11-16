@@ -2,6 +2,7 @@ package Enum;
 
 public enum  ConstantSpecificMethod {
     DATE_TIME {
+        @Override
         String getInfo() {
             return "2018-5-4";
         }
