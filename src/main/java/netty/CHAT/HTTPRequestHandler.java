@@ -48,6 +48,7 @@ public class HTTPRequestHandler extends SimpleChannelInboundHandler<FullHttpRequ
             RandomAccessFile file = new RandomAccessFile(INDEX, "r");
             HttpResponse response = new DefaultFullHttpResponse(
                     request.getProtocolVersion(), HttpResponseStatus.OK
+
             );
             response.headers().set(
                     HttpHeaders.Names.CONTENT_TYPE,
