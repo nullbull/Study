@@ -47,12 +47,16 @@ public class ZWT {
     private static String DEFAULT_FILE_NAME = "dimens-generation.xml";
     private static String HELP = "--help";
     private static List<Integer> TYPE_LIST = Arrays.asList(1, 2, 3);
-    private static List<String> ARGS = Arrays.asList("-c", "-i", "-o");
+    private static List<String> ARGS = Arrays.asList("-type", "-i", "-o");
 
     private static String fin = "";
     private static String SourceFileName  = "";
     private static String path = "";
     private static Scanner sc = null;
+
+    private static int TYPE_FIRST = 1;
+    private static int TYPE_SECOND = 2;
+    private static int TYPE_THIRD = 3;
     private static Consumer consumer = new Consumer() {
         @Override
         public void accept(Object o) {
@@ -60,8 +64,8 @@ public class ZWT {
                 System.out.println("输入错误，请重新输入");
                 System.out.println("您可以输入1, 2, 3来选择");
                 o = validType(fin = sc.nextLine());
-                System.out.println(fin);
-                System.out.println(o);
+//                System.out.println(fin);
+//                System.out.println(o);
             }
         }
     };
@@ -72,8 +76,8 @@ public class ZWT {
                 System.out.println("输入错误，请重新输入");
                 System.out.println("您可以输入1, 2, 3来选择");
                 o = validType(fin = sc.nextLine());
-                System.out.println(fin);
-                System.out.println(o);
+//                System.out.println(fin);
+//                System.out.println(o);
             }
             return o;
         }
@@ -128,10 +132,10 @@ public class ZWT {
     }
 
     /**
-     * 生存方法
+     * 生成方法
      * @param type 选择的类型
-     * @param SourceFileName 目标文件目录
-     * @param path 输入文件目录
+     * @param SourceFileName 输入文件目录
+     * @param path 生成文件目录路径
      */
     public static void gen(int type, String SourceFileName, String path) {
         SourceFileName = completePath(SourceFileName);
@@ -147,13 +151,13 @@ public class ZWT {
         StringBuilder sw240 = new StringBuilder();
         StringBuilder sw480 = new StringBuilder();
         try {
-            if (type == 1) {
+            if (type == TYPE_FIRST) {
                 sw240.append("<!-------------------------  2030*1080 --------------------------->\r\n");
             }
             else {
                 sw240.append("<!-------------------------  DEFAULT ----------------------------->\r\n");
             }
-            if (type == 3) {
+            if (type == TYPE_THIRD) {
                 sw480.append("\r\n ")
                      .append("<!-------------------------  2030*1080 --------------------------->\r\n");
             } else {
@@ -190,8 +194,8 @@ public class ZWT {
                             break;
                     }
                 } else {
-                    sw240.append(tempString).append("");
-                    sw480.append(tempString).append("");
+                    sw240.append(tempString).append("\r\n");
+                    sw480.append(tempString).append("\r\n");
                 }
                 line++;
             }
@@ -277,9 +281,9 @@ public class ZWT {
      */
     private static void process(TreeMap<String, String> tree) {
         sc = new Scanner(System.in);
-        boolean a = false;
-        boolean b = false;
-        boolean c = false;
+        boolean isFirstArgLegal = false;
+        boolean isSecondArgLegal = false;
+        boolean isThirdLegal = false;
 
         Optional firstInput = null;
         Optional<String> sourcePath = null;
@@ -288,8 +292,8 @@ public class ZWT {
         if (size >= 1) {
             firstInput = Optional.ofNullable(tree.get(ARGS.get(0)));
             fin = (String)firstInput.get();
-            if (!(a = firstInput.filter(o -> validType((String) o)).isPresent())) {
-                a = (boolean)function.apply(a);
+            if (!(isFirstArgLegal = firstInput.filter(o -> validType((String) o)).isPresent())) {
+                isFirstArgLegal = (boolean)function.apply(isFirstArgLegal);
             }
             //System.out.println(a);
             if (size >= 2 && null != tree.get(ARGS.get(1))) {
@@ -302,22 +306,21 @@ public class ZWT {
                     path = toPath.get();
                     doIfElse(toPath.get(), predicate3, consumer2);
                 }
-                c = true;
+                isThirdLegal = true;
             }
             if (size >= 2 && null == tree.get(ARGS.get(1)))
             {
                 toPath = Optional.ofNullable(tree.get(ARGS.get(2)));
                 path = toPath.get();
                 doIfElse(toPath.get(), predicate3, consumer2);
-                b = true;
+                isSecondArgLegal = true;
             }
-            b = true;
-            c = true;
+            isSecondArgLegal = true;
+            isThirdLegal = true;
         }
 
-        if (a && b && c) {
+        if (isFirstArgLegal && isSecondArgLegal && isThirdLegal) {
             int type = Integer.parseInt(fin);
-            System.out.println(type);
             gen(type, SourceFileName, path);
         }
     }
@@ -337,7 +340,7 @@ public class ZWT {
                     "\n" +
                     "author: justinniu version:2.0\n" +
                     "\n" +
-                    "-c [必填] 输入文件类型 1 Default 2 2030×1080 3 SW600\n" +
+                    "-ty [必填] 输入文件类型 1 Default 2 2030×1080 3 SW600\n" +
                     "\n" +
                     "-i [可选] 输入目录，该目录下需要包含dimens.xml文件\n" +
                     "\n" +
@@ -345,13 +348,13 @@ public class ZWT {
                     "\n" +
                     "使用示例\n" +
                     "\n" +
-                    "java DimensTools -c 1\n" +
+                    "java DimensTools -type 1\n" +
                     "根据当前目录下的dimens文件生成到当前目录下\n" +
                     "\n" +
-                    "java DimensTools -c 2 -o /home/user/\n" +
+                    "java DimensTools -type 2 -o /home/user/\n" +
                     "根据当前目录下的dimens.xml文件生成到 /home/user目录下\n" +
                     "\n" +
-                    "java DimensTool -c 3 -i /home/user/ -o /opt/\n" +
+                    "java DimensTool -type 3 -i /home/user/ -o /opt/\n" +
                     "根据/home/user/目录下的dimens.xml文件生成到/opt目录下");
             System.exit(0);
         }
@@ -381,7 +384,7 @@ public class ZWT {
         System.out.println(error.getMsg());
         System.out.println("请输入正确的参数\r\n");
         System.out.println("--help 查看帮助\r\n");
-        System.out.println("您可以输入类似 -c 1 -i /home/justinniu -o /home/justinniu/generation");
+        System.out.println("您可以输入类似 -type 1 -i /home/justinniu -o /home/justinniu/generation");
         System.exit(0);
     }
     private static void doIfElse(Object o, Predicate p, Consumer a) {
