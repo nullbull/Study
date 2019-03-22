@@ -35,6 +35,6 @@ public class DemoMethodInterceptor implements MethodInterceptor {
         enhancer.setCallback(new DemoMethodInterceptor());
         RealSubject realSubject = (RealSubject) enhancer.create();
         realSubject.hello();
-        ThreadLocal
+
     }
 }
