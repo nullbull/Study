@@ -33,4 +33,26 @@
 //        ctx.close();
 //    }
 //
+//
+//@Path("/create")
+//public ActionResult create() throws Exception{
+//
+//        String[] content = {"太好看了", "讲的太棒了", "讲的还行吧", "听了很有帮助", "老师也太厉害了吧", "一般一般", "我真是太笨了， 都没听懂", "太垃圾了", "真是不好看"};
+//        Random random = new Random(37);
+//        for (int i = 0; i < 100; i++) {
+//        Map map = new HashMap(20);
+//        map.put("userId", getUserId(getCurrentUserId()));
+//        map.put("userName", getCurrentUserName());
+//        map.put("targetId", "456");
+//        map.put("targetType", Constants.TARGET_TYPE_VIDEO);
+//        map.put("channel",(short) 1);
+//        map.put("starNum", i % 5);
+//        map.put("content", "测试评论：" + content[random.nextInt(9) % 9]);
+//        map.put("courseName", "测试文库");
+//        int result = scf.getCommentService().addComment(getBizCodeType(), map);
+//        log.info(result+"");
+//
+//        }
+//        return ActionResultUtil.sendJsonActionResult(Result.builtOk("hha"));
+//        }
 //}
