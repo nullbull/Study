@@ -1,3 +1,5 @@
+package dimen;
+
 import java.io.*;
 import java.util.Arrays;
 import java.util.List;
@@ -23,7 +25,7 @@ public class DimensTool15 {
     private static double DEFAULT_2030_1080 = 1.09;
     private static double DEFAULT_SW600 = 1.035;
 
-    private static String DEFAULT_FILE_NAME = "dimens-generation.xml";
+    private static String DEFAULT_FILE_NAME = "dimen/dimens-generation.xml";
     private static List<Integer> TYPE_LIST = Arrays.asList(1, 2, 3);
 
 
@@ -53,7 +55,7 @@ public class DimensTool15 {
          */
         System.out.println("SouthFIleName + " + SourceFileName + "|");
         System.out.println("path + " + path + " |");
-        File file = new File(SourceFileName + "dimens.xml");
+        File file = new File(SourceFileName + "dimen/dimens.xml");
         System.out.println(file.getAbsoluteFile());
         BufferedReader reader = null;
         StringBuilder sw240 = new StringBuilder();
@@ -151,7 +153,7 @@ public class DimensTool15 {
         if (!file.isEmpty() && file.charAt(0) != '/')
             return false;
         if (type == 1) {
-            return new File(file.charAt(file.length() - 1) == '/' ? file + "dimens.xml" : file + "/" + "dimens.xml").exists();
+            return new File(file.charAt(file.length() - 1) == '/' ? file + "dimen/dimens.xml" : file + "/" + "dimen/dimens.xml").exists();
         } else {
             return new File(file.isEmpty() ? file + "/" : file).exists();
         }

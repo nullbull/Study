@@ -1,3 +1,5 @@
+package dimen;
+
 import java.io.*;
 import java.util.*;
 import java.util.function.Consumer;
@@ -10,7 +12,31 @@ import java.util.stream.Collectors;
  * @date 2018/11/16 16:47:07
  */
 @SuppressWarnings("unchecked")
-public class ZWT {
+public class DimensTool {
+    /**
+     * DEFAULT 默认大小
+     * 2030×1080 刘海屏等大屏分辨率 DEFALUT × 1.09
+     * SW600PD 平板电脑分辨率支持 DEFALUT × 1.035
+     * 源文件目录的dimens文件名需为dimens.xml
+     * 如选择当前目录，请输入回车
+     */
+    private static double DEFAULT_2030_1080 = 1.09;
+    private static double DEFAULT_SW600 = 1.035;
+
+    private static String DEFAULT_FILE_NAME = "dimen/dimens-generation.xml";
+    private static String HELP = "--help";
+    private static List<Integer> TYPE_LIST = Arrays.asList(1, 2, 3);
+    private static List<String> ARGS = Arrays.asList("-type", "-i", "-o");
+
+    private static String fin = "";
+    private static String SourceFileName  = "";
+    private static String path = "";
+    private static Scanner sc = null;
+
+    private static int TYPE_FIRST = 1;
+    private static int TYPE_SECOND = 2;
+    private static int TYPE_THIRD = 3;
+
 
     private enum Error{
         WRONG_COUNT(4, "选项不能为空"),
@@ -34,29 +60,7 @@ public class ZWT {
             return msg;
         }
     }
-    /**
-     * DEFAULT 默认大小
-     * 2030×1080 刘海屏等大屏分辨率 DEFALUT × 1.09
-     * SW600PD 平板电脑分辨率支持 DEFALUT × 1.035
-     * 源文件目录的dimens文件名需为dimens.xml
-     * 如选择当前目录，请输入回车
-     */
-    private static double DEFAULT_2030_1080 = 1.09;
-    private static double DEFAULT_SW600 = 1.035;
 
-    private static String DEFAULT_FILE_NAME = "dimens-generation.xml";
-    private static String HELP = "--help";
-    private static List<Integer> TYPE_LIST = Arrays.asList(1, 2, 3);
-    private static List<String> ARGS = Arrays.asList("-type", "-i", "-o");
-
-    private static String fin = "";
-    private static String SourceFileName  = "";
-    private static String path = "";
-    private static Scanner sc = null;
-
-    private static int TYPE_FIRST = 1;
-    private static int TYPE_SECOND = 2;
-    private static int TYPE_THIRD = 3;
     private static Consumer consumer = new Consumer() {
         @Override
         public void accept(Object o) {
@@ -143,9 +147,9 @@ public class ZWT {
         /**
          * 以此文件夹下的dimens.xml文件内容为初始值参照
          */
-       // System.out.println("SouthFIleName + " + SourceFileName + "|");
-      //  System.out.println("path + " + path + " |");
-        File file = new File(SourceFileName + "dimens.xml");
+        // System.out.println("SouthFIleName + " + SourceFileName + "|");
+        //  System.out.println("path + " + path + " |");
+        File file = new File(SourceFileName + "dimen/dimens.xml");
         //System.out.println(file.getAbsoluteFile());
         BufferedReader reader = null;
         StringBuilder sw240 = new StringBuilder();
@@ -159,10 +163,10 @@ public class ZWT {
             }
             if (type == TYPE_THIRD) {
                 sw480.append("\r\n ")
-                     .append("<!-------------------------  2030*1080 --------------------------->\r\n");
+                        .append("<!-------------------------  2030*1080 --------------------------->\r\n");
             } else {
                 sw480.append("\r\n ")
-                     .append("<!-------------------------  SW600 ------------------------------->\r\n");
+                        .append("<!-------------------------  SW600 ------------------------------->\r\n");
             }
 
 
@@ -177,7 +181,7 @@ public class ZWT {
                     String end = tempString.substring(tempString.lastIndexOf("<") - 2);
                     //截取<dimen></dimen>标签内的内容，从>右括号开始，到左括号减2，取得配置的数字
                     Double num = Double.parseDouble(tempString.substring(tempString.indexOf(">") + 1,
-                                    tempString.indexOf("</dimen>") - 2));
+                            tempString.indexOf("</dimen>") - 2));
                     //根据不同的尺寸，计算新的值，拼接新的字符串，并且结尾处换行。
                     switch (type) {
                         case 1:
@@ -241,7 +245,7 @@ public class ZWT {
         if (!file.isEmpty() && file.charAt(0) != '/')
             return false;
         if (type == 1) {
-            return new File(file.charAt(file.length() - 1) == '/' ? file + "dimens.xml" : file + "/" + "dimens.xml").exists();
+            return new File(file.charAt(file.length() - 1) == '/' ? file + "dimen/dimens.xml" : file + "/" + "dimen/dimens.xml").exists();
         } else {
             return new File(file.isEmpty() ? file + "/" : file).exists();
         }
@@ -299,7 +303,7 @@ public class ZWT {
             if (size >= 2 && null != tree.get(ARGS.get(1))) {
                 sourcePath = Optional.ofNullable(tree.get(ARGS.get(1)));
                 SourceFileName = sourcePath.get();
-               // System.out.println("sourcePath: " + sourcePath.get());
+                // System.out.println("sourcePath: " + sourcePath.get());
                 doIfElse(sourcePath.get(), predicate2, consumer1);
                 if (size >= 3) {
                     toPath = Optional.ofNullable(tree.get(ARGS.get(2)));
@@ -394,80 +398,5 @@ public class ZWT {
         process(validArgs(args));
     }
 
-
-
-
-
-
-    //        process(args);
-    //      Scanner sc = new Scanner(System.in);
-//        System.out.println(
-//                " * DEFAULT 默认大小\n" +
-//         " * 2030×1080 刘海屏等大屏分辨率 DEFALUT × 1.09 \n" +
-//         " * SW600PD 平板电脑分辨率支持 DEFALUT × 1.035 \n" +
-//         " * 源文件目录的dimens文件名需为dimens.xml \n" +
-//         " * 如选择当前目录，请输入回车\n"
-//         );
-//        System.out.println("请选择输入的文件类型 dimen/DEFAULT:1  dimen/2030*1080:2  dimen/SW600PD:3");
-//        int type = 1;
-//        while (true) {
-//            String fin = sc.nextLine();
-//            if (validType(fin)) {
-//                type = Integer.parseInt(fin);
-//                break;
-//            }
-//            Sycdstem.out.println("输入错误，请重新输入");
-//        }
-//        String SourceFileName = "";
-//        System.out.println("请输入Dimens文件所在的路径(回车为当前目录)");
-//        while (true) {
-//            SourceFileName = sc.nextLine();
-//            if (validFile(SourceFileName, 1)) {
-//                break;
-//            }
-//            System.out.println("文件格式不正确或者不存在，请重新输入");
-//        }
-//
-//        //sc.nextLine();
-//        System.out.println("请输入生成适配文件的路径(回车为当前目录)");
-//        String path = "";
-//        while (true) {
-//            path = sc.nextLine();
-//            if (validFile(path, 2)) {
-//                break;
-//            }
-//            System.out.println("文件格式不正确或者不存在，请重新输入");
-//        }
-
-
-
-//        String fin = (String)firstInput.get();
-//        Optional<String> sourcePath = Optional.ofNullable(args[1]);
-//        Optional<String> toPath = Optional.ofNullable(args[2]);
-//        if (!sourcePath.isPresent()) {
-//            b = true;
-//        }
-//        if (!toPath.isPresent()) {
-//            c = true;
-//        }
-//
-//        System.out.println("1: " + fin);
-//        System.out.println("2 :" + SourceFileName);
-//        System.out.println("3 :" + path);
-//
-//        a = validType(fin);
-////        b = validFile(SourceFileName, 1);
-////        c = validFile(SourceFileName, 2);
-//        while (!a) {
-//            System.out.println("输入错误，请重新输入");
-//            System.out.println("您可以输入1, 2, 3来选择");
-//            a = validType(fin = sc.nextLine());
-//        }
-//
-//
-//        while (!c) {
-//            System.out.println("文件格式不正确或者不存在，请重新输入");
-//            c = validFile(path = sc.nextLine(), 2);
-//        }
 
 }

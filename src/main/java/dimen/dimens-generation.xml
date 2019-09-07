@@ -1,0 +1,52 @@
+<!-------------------------  DEFAULT ----------------------------->
+asdsadasdadads
+<dimen name="not_create_command_ll_layout_margin_top">22.16dp</dimen>
+<dimen name="not_create_command_ll_layout_margin_bottom">12.66dp</dimen>
+<dimen name="not_create_command_ll_layout_padding_start">25.32dp</dimen>
+<dimen name="not_create_command_ll_layout_padding_end">25.32dp</dimen>
+<dimen name="not_create_command_ll_layout_view_text_size_a">13.29sp</dimen>
+<dimen name="not_create_command_ll_layout_view_margin_top">4.43dp</dimen>
+<dimen name="not_create_command_ll_layout_view_text_size_b">12.03sp</dimen>
+<dimen name="empty_view_margin_top">116.16dp</dimen>
+<dimen name="empty_view_image_view_layout_width">113.94dp</dimen>
+<dimen name="empty_view_image_view_layout_height">113.94dp</dimen>
+<dimen name="empty_view_image_view_layout_margin_bottom">23.73dp</dimen>
+<dimen name="empty_view_text_view_text_size">16.78sp</dimen>
+<dimen name="empty_view_button_padding_start">9.50dp</dimen>
+<dimen name="empty_view_button_padding_end">9.50dp</dimen>
+<dimen name="empty_view_button_layout_margin_top">9.50dp</dimen>
+<dimen name="create_panel_layout_margin_bottom">18.99dp</dimen>
+<dimen name="create_panel_others_layout_margin_top">9.50dp</dimen>
+<dimen name="create_panel_others_layout_margin_buttom">9.50dp</dimen>
+<dimen name="create_panel_others_layout_text_size">11.39sp</dimen>
+<dimen name="create_panel_create_command_layout_height">40.51dp</dimen>
+<dimen name="create_panel_create_command_layout_margin_end">40.51dp</dimen>
+<dimen name="create_panel_create_command_layout_margin_start">25.32dp</dimen>
+<dimen name="create_panel_create_command_layout_margin_top">12.66dp</dimen>
+
+ <!-------------------------  SW600 ------------------------------->
+asdsadasdadads
+<dimen name="not_create_command_ll_layout_margin_top">22.93dp</dimen>
+<dimen name="not_create_command_ll_layout_margin_bottom">13.10dp</dimen>
+<dimen name="not_create_command_ll_layout_padding_start">26.21dp</dimen>
+<dimen name="not_create_command_ll_layout_padding_end">26.21dp</dimen>
+<dimen name="not_create_command_ll_layout_view_text_size_a">13.76sp</dimen>
+<dimen name="not_create_command_ll_layout_view_margin_top">4.59dp</dimen>
+<dimen name="not_create_command_ll_layout_view_text_size_b">12.45sp</dimen>
+<dimen name="empty_view_margin_top">120.22dp</dimen>
+<dimen name="empty_view_image_view_layout_width">117.93dp</dimen>
+<dimen name="empty_view_image_view_layout_height">117.93dp</dimen>
+<dimen name="empty_view_image_view_layout_margin_bottom">24.56dp</dimen>
+<dimen name="empty_view_text_view_text_size">17.37sp</dimen>
+<dimen name="empty_view_button_padding_start">9.83dp</dimen>
+<dimen name="empty_view_button_padding_end">9.83dp</dimen>
+<dimen name="empty_view_button_layout_margin_top">9.83dp</dimen>
+<dimen name="create_panel_layout_margin_bottom">19.66dp</dimen>
+<dimen name="create_panel_others_layout_margin_top">9.83dp</dimen>
+<dimen name="create_panel_others_layout_margin_buttom">9.83dp</dimen>
+<dimen name="create_panel_others_layout_text_size">11.79sp</dimen>
+<dimen name="create_panel_create_command_layout_height">41.93dp</dimen>
+<dimen name="create_panel_create_command_layout_margin_end">41.93dp</dimen>
+<dimen name="create_panel_create_command_layout_margin_start">26.21dp</dimen>
+<dimen name="create_panel_create_command_layout_margin_top">13.10dp</dimen>
+
