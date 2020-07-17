@@ -1,4 +1,4 @@
-package Enum;
+package main.java.Enum;
 enum Search {HITHER, YON}
 public class UpcastEnum {
     public static void main(String[] args) {

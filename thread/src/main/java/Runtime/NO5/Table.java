@@ -1,4 +1,4 @@
-package Runtime.NO5;
+package main.java.Runtime.NO5;
 
 public class Table {
     private final String[] buffer;

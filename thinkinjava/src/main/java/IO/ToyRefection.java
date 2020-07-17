@@ -1,4 +1,4 @@
-package IO;
+package main.java.IO;
 
 import java.lang.reflect.*;
 
@@ -18,7 +18,7 @@ public class ToyRefection {
     }
     public static void main(String[] args){
         try {
-            Class<?> c = Class.forName("IO.Toy");
+            Class<?> c = Class.forName("main.java.IO.Toy");
             printInfo("获得类对象", c);
             Class<?> superClass = c.getSuperclass();
             printInfo("获得父类", superClass);

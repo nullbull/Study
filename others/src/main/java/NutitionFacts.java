@@ -1,4 +1,4 @@
-package EffectiveJava;
+package main.java;
 
 public class NutitionFacts {
     private final int servingSize;

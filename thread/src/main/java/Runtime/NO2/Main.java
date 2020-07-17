@@ -1,4 +1,4 @@
-package Runtime.NO2;
+package main.java.Runtime.NO2;
 
 public class Main {
     public static void main(String[] args) {

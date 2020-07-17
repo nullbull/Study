@@ -1,4 +1,4 @@
-package Java.Exception;
+package main.java.Exception;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

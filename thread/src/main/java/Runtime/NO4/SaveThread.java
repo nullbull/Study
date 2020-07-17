@@ -1,4 +1,4 @@
-package Runtime.NO4;
+package main.java.Runtime.NO4;
 
 public class SaveThread  extends  Thread{
     private final Data data;

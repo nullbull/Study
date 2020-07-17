@@ -1,4 +1,4 @@
-package Enum;
+package main.java.Enum;
 
 import java.util.Iterator;
 

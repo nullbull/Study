@@ -1,4 +1,4 @@
-package util;
+package main.java.util;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.config.RequestConfig;

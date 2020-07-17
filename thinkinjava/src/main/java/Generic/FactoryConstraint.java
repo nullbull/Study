@@ -1,4 +1,4 @@
-package Java.Generic;
+package main.java.Generic;
 
 interface Factory<T>{
     T creat();

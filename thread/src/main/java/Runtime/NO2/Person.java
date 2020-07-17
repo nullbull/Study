@@ -1,4 +1,4 @@
-package Runtime.NO2;
+package main.java.Runtime.NO2;
 
 public final class Person {
     private final String name;

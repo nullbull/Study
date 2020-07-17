@@ -1,4 +1,4 @@
-package Runtime.NO1;
+package main.java.Runtime.NO1;
 
 public class CrackerThread extends Thread {
     private final SecurityGate sg;

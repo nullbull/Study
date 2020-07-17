@@ -1,4 +1,4 @@
-package Design_Pattern;
+package main.java.Design_Pattern;
 
 public class Single {
     private static Single single = new Single();

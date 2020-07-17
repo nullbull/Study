@@ -1,4 +1,4 @@
-package Java.Exception;
+package main.java.Exception;
 
 public class MyException extends Exception {
     private int x;

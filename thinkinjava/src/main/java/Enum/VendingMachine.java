@@ -1,4 +1,4 @@
-package Enum;
+package main.java.Enum;
 
 import Java.Generic.Generator;
 
@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.EnumMap;
 import java.util.Iterator;
 
-import static Enum.Input.*;
+import static main.java.Enum.Input.*;
 
 enum Category {
     Money(Nickel, Dime, Quater, Dollar), Item_Selection(Toothpaste, Chips, Soap, Soda),

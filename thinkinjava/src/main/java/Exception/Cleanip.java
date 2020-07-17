@@ -1,4 +1,4 @@
-package Java.Exception;
+package main.java.Exception;
 
 public class Cleanip {
     public static void main(String[] args){

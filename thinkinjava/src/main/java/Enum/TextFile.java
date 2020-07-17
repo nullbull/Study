@@ -1,4 +1,4 @@
-package Enum;
+package main.java.Enum;
 import java.io.*;
 import java.util.*;
 public class TextFile extends ArrayList<String>{

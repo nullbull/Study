@@ -1,4 +1,4 @@
-package Pachong;
+package main.java.Pachong;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,4 +1,4 @@
-package SpringAOP;
+package main.java.SpringAOP;
 
 /**
  * @Auth justinniu

@@ -1,4 +1,4 @@
-package Enum;
+package main.java.Enum;
 
 public enum Course {
     Appetizer(Food.Apptizer.class),

@@ -1,4 +1,4 @@
-package IO;
+package main.java.IO;
 
 public class ToyAbstract implements ToyInterface {
     @Override

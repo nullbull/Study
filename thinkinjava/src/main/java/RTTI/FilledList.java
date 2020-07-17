@@ -1,4 +1,4 @@
-package Java.RTTI;
+package main.java.RTTI;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package test;
+package main.java.proxy;
 
 import java.util.Arrays;
 import java.util.HashSet;

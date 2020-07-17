@@ -1,4 +1,4 @@
-package util;
+package main.java.util;
 
 /**
  * @author 牛贞昊（niuzhenhao@58.com）

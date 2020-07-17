@@ -1,4 +1,4 @@
-package algorithm;
+package main.java.algorithm;
 
 /**
  * @author 牛贞昊（niuzhenhao@58.com）

@@ -1,4 +1,4 @@
-package Runtime.Thread;
+package main.java.Runtime.Thread;
 class DualSynch {
     private Object syncObject = new Object();
     public synchronized void f() {

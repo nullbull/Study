@@ -1,4 +1,4 @@
-package Lambda;
+package main.java.Lambda;
 
 public class Track {
     private String name;

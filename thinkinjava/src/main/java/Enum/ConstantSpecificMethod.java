@@ -1,4 +1,4 @@
-package Enum;
+package main.java.Enum;
 
 public enum  ConstantSpecificMethod {
     DATE_TIME {

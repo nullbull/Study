@@ -1,4 +1,4 @@
-package Enum;
+package main.java.Enum;
 
 public interface Food {
     enum Apptizer implements Food{

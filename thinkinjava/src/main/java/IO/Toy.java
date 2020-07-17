@@ -1,4 +1,4 @@
-package IO;
+package main.java.IO;
 
 public class Toy extends ToyAbstract {
     private String name;

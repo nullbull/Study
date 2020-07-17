@@ -1,4 +1,4 @@
-package leetcode;
+package main.java.leetcode;
 
 public class A正则表达式 {
 

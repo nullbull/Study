@@ -1,4 +1,4 @@
-package Enum;
+package main.java.Enum;
 
 import Java.Generic.Generator;
 

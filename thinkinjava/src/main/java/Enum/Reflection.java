@@ -1,4 +1,4 @@
-package Enum;
+package main.java.Enum;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;

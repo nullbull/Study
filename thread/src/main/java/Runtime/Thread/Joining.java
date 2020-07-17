@@ -1,4 +1,4 @@
-package Runtime.Thread;
+package main.java.Runtime.Thread;
 class Sleeper extends Thread {
     private int duration;
     public Sleeper(String name, int sleepTime) {

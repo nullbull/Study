@@ -1,4 +1,4 @@
-package Java.Generic;
+package main.java.Generic;
 
 import java.util.ArrayList;
 import java.util.Random;

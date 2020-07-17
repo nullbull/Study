@@ -1,6 +1,6 @@
-package Java.Collection;
+package main.java.Collection;
 
-import Java.Generic.Generator;
+import main.java.Generic.Generator;
 import javafx.util.Pair;
 
 import java.util.Iterator;

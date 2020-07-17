@@ -1,4 +1,4 @@
-package Enum;
+package main.java.Enum;
 
 public enum OzWitch {
     WEST("Miss Gulch, aka the Wicked Witch of the West"),

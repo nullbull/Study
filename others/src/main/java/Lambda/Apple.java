@@ -1,4 +1,4 @@
-package Lambda;
+package main.java.Lambda;
 
 public class Apple {
     private String color;

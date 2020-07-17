@@ -1,15 +1,15 @@
-package Spring.AOP;
+package main.java.Spring.AOP;
 
 public aspect MyAspectJDemo {
     /**
      * 定义切点,日志记录切点
      */
-    pointcut recordLog():call(* HelloWord.sayHello(..));
+    pointcut recordLog():call(* main.java.Spring.AOP.HelloWord.sayHello(..));
 
     /**
      * 定义切点,权限验证(实际开发中日志和权限一般会放在不同的切面中,这里仅为方便演示)
      */
-    pointcut authCheck():call(* HelloWord.sayHello(..));
+    pointcut authCheck():call(* main.java.Spring.AOP.HelloWord.sayHello(..));
 
     /**
      * 定义前置通知!

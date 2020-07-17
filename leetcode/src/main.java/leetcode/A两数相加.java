@@ -1,4 +1,4 @@
-package leetcode;
+package main.java.leetcode;
 
 public class A两数相加 {
 

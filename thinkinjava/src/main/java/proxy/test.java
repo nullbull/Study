@@ -1,4 +1,4 @@
-package test;
+package main.java.proxy;
 
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 

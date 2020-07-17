@@ -1,4 +1,4 @@
-package IO;
+package main.java.IO;
 import java.io.*;
 public class IOTest {
     public static void printStream() throws FileNotFoundException, IOException{

@@ -1,4 +1,4 @@
-package Java.RTTI;
+package main.java.RTTI;
 
 class C implements  A {
 

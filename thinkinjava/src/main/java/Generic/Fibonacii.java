@@ -1,4 +1,4 @@
-package Java.Generic;
+package main.java.Generic;
 
 public class Fibonacii implements Generator<Integer> {
     private static int count = 0;

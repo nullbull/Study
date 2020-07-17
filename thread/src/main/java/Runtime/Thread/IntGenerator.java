@@ -1,4 +1,4 @@
-package Runtime.Thread;
+package main.java.Runtime.Thread;
 
 public abstract class IntGenerator {
     private volatile boolean canceled = false;

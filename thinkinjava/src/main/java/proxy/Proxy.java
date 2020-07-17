@@ -1,4 +1,4 @@
-package test;
+package main.java.proxy;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

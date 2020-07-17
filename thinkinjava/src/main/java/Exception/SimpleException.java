@@ -1,4 +1,4 @@
-package Java.Exception;
+package main.java.Exception;
 
 class SimpleException extends Exception {
 

@@ -1,4 +1,4 @@
-package Pachong;
+package main.java.Pachong;
 
 import java.io.BufferedReader;
 import java.io.IOException;

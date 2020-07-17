@@ -1,4 +1,4 @@
-package test;
+package main.java.proxy;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

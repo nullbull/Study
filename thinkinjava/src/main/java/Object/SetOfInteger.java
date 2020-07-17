@@ -1,4 +1,4 @@
-package Java.Object;
+package main.java.Object;
 
 import java.util.HashSet;
 import java.util.Random;

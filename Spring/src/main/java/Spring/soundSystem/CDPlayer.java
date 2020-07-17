@@ -1,4 +1,4 @@
-package Spring.soundSystem;
+package main.java.Spring.soundSystem;
 
 import org.springframework.stereotype.Component;
 

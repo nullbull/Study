@@ -1,4 +1,4 @@
-package Runtime.NO1;
+package main.java.Runtime.NO1;
 
 import java.util.Random;
 import java.util.concurrent.Semaphore;

@@ -1,4 +1,4 @@
-package Java.Generic;
+package main.java.Generic;
 
 public class LinkedStack<T> {
     private static class Node<U> {

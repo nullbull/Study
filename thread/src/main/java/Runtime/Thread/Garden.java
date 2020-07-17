@@ -1,4 +1,4 @@
-package Runtime.Thread;
+package main.java.Runtime.Thread;
 
 import java.util.ArrayList;
 import java.util.List;

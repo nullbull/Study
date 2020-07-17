@@ -1,4 +1,4 @@
-package algorithm;
+package main.java.algorithm;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Condition;

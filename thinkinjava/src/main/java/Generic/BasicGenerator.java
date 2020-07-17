@@ -1,4 +1,4 @@
-package Java.Generic;
+package main.java.Generic;
 
 class CountedObject{
     private static int count = 0;

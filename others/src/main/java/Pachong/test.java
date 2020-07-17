@@ -1,4 +1,4 @@
-package Pachong;
+package main.java.Pachong;
 
 import java.text.DateFormat;
 import java.util.Date;

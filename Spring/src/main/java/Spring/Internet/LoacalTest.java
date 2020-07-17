@@ -1,4 +1,4 @@
-package Spring.Internet;
+package main.java.Spring.Internet;
 
 import java.text.DateFormat;
 import java.text.MessageFormat;

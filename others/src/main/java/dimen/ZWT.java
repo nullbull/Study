@@ -1,4 +1,4 @@
-package dimen;
+package main.java.dimen;
 
 import java.io.*;
 import java.util.*;
@@ -46,7 +46,7 @@ public class ZWT {
     private static double DEFAULT_2030_1080 = 1.09;
     private static double DEFAULT_SW600 = 1.035;
 
-    private static String DEFAULT_FILE_NAME = "dimen/dimens-generation.xml";
+    private static String DEFAULT_FILE_NAME = "main/java/dimen/dimens-generation.xml";
     private static String HELP = "--help";
     private static List<Integer> TYPE_LIST = Arrays.asList(1, 2, 3);
     private static List<String> ARGS = Arrays.asList("-type", "-i", "-o");
@@ -147,7 +147,7 @@ public class ZWT {
          */
        // System.out.println("SouthFIleName + " + SourceFileName + "|");
       //  System.out.println("path + " + path + " |");
-        File file = new File(SourceFileName + "dimen/dimens.xml");
+        File file = new File(SourceFileName + "main/java/dimen/dimens.xml");
         //System.out.println(file.getAbsoluteFile());
         BufferedReader reader = null;
         StringBuilder sw240 = new StringBuilder();
@@ -243,7 +243,7 @@ public class ZWT {
         if (!file.isEmpty() && file.charAt(0) != '/')
             return false;
         if (type == 1) {
-            return new File(file.charAt(file.length() - 1) == '/' ? file + "dimen/dimens.xml" : file + "/" + "dimen/dimens.xml").exists();
+            return new File(file.charAt(file.length() - 1) == '/' ? file + "main/java/dimen/dimens.xml" : file + "/" + "main/java/dimen/dimens.xml").exists();
         } else {
             return new File(file.isEmpty() ? file + "/" : file).exists();
         }

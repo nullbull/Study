@@ -1,4 +1,4 @@
-package Java.Exception;
+package main.java.Exception;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

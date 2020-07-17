@@ -1,4 +1,4 @@
-package Spring.AOP;
+package main.java.Spring.AOP;
 
 public aspect Criticzz {
     public Criticzz() {}

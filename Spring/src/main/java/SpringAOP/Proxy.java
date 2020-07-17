@@ -1,4 +1,4 @@
-package SpringAOP;
+package main.java.SpringAOP;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

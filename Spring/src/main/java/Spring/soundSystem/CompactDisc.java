@@ -1,4 +1,4 @@
-package Spring.soundSystem;
+package main.java.Spring.soundSystem;
 
 public interface CompactDisc {
     void play();

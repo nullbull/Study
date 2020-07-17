@@ -1,4 +1,4 @@
-package AT;
+package main.java.AT;
 
 @DBTable(name = "Member")
 public class Member {

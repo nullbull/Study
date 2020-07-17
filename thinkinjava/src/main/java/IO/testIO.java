@@ -1,4 +1,4 @@
-package IO;
+package main.java.IO;
  import java.io.*;
 
 public class testIO {

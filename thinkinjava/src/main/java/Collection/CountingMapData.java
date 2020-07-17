@@ -1,4 +1,4 @@
-package Java.Collection;
+package main.java.Collection;
 
 import java.util.AbstractMap;
 import java.util.Map;
